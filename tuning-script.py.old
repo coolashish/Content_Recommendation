@@ -1,0 +1,49 @@
+import sys
+import os
+
+def analyze_output(filename):
+	"""
+	Return values:
+	-1,value: overfitting occured & highest index at which it did not occur
+	1,value: overfitting did not occur and value minimum va_logloss
+	"""
+	f = open(filename, 'r')
+	line = f.readline()
+	prev_val_logloss = 1
+	while (line):
+		curr_val_loss = float(line.split(' ')[2])
+		if (curr_val_loss > pre_val_loss):
+			f.close()
+			return -1
+		prev_val_loss = curr_val_loss
+		line = f.readline()
+	f.close()
+	return curr_val_loss
+		
+
+train_file = sys.argv[1]
+validation_file = sys.argv[2]
+
+regularization = 0.00002
+learning_rate = 0.2
+iterations = 15
+
+fo = open('tuning-analysis.txt', 'w')
+fo.write('regularization\tlearning_rate\titerations\tvalidation_loss\n'
+
+while (True):
+	
+	while (True):
+
+		while (True):
+			ret = os.system('./ffm-train' + ' -l ' + str(regularization) + ' -r '+ str(learning_rate) + ' -t ' + str(iterations) + ' -p ' + validation_file + ' ' + train_file > ' log.txt')	
+			if (ret != 0):
+				print 'Error executing command'
+				sys.exit(-1)
+			flag,value = analyze_output('log.txt')
+			if (flag == -1):
+				if (value == iterations):
+				iterations = value
+			else:
+				iterations += iteration_step_size
+				

@@ -1,0 +1,1 @@
+./ffm-train -l 0.000008 -r 0.05 -s 8 -t 50 --no-rand --on-disk -p "/media/hadoop/A45C6942B33F249F/B.Tech-Project/7-million-validation-13jan.ffm"  "/media/hadoop/A45C6942B33F249F/B.Tech-Project/80-million-train-categorical.ffm"  "/media/hadoop/A45C6942B33F249F/B.Tech-Project/ffm-model-categorical-13jan.ffm"
